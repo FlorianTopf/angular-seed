@@ -1,0 +1,21 @@
+{
+  "name": "angular-1",
+  "version": "0.0.1",
+  "description": "Angular Seed",
+  "main": "gulpfile.js",
+  "author": "Florian Topf",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-ui-router": "^0.2.15"
+  },
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-concat": "2.6.0",
+    "gulp-rename": "1.2.2",
+    "gulp-shell": "0.4.3",
+    "gulp-tsd": "0.0.4",
+    "gulp-typescript": "^2.9.2",
+    "gulp-webserver": "0.9.1"
+  }
+}

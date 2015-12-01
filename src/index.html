@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>angular-1</title>
+  </head>
+  <body ng-app="app">
+
+    <div ui-view>Loading...</div>
+
+    <script src="lib/system.js"></script>
+
+    <script>
+      System.config({
+          defaultJSExtensions: true,
+          paths: {
+              'angular': 'lib/angular',
+              'angular-ui-router': 'lib/angular-ui-router'
+          },
+          meta: {
+              'angular': {
+                  format: 'global',
+                  exports: 'angular'
+              },
+              'angular-ui-router': {
+                  format: 'global',
+                  deps: ['angular']
+              }
+          }
+      });
+    </script>
+
+    <script>
+      System.import('app.module').catch(console.log.bind(console));
+    </script>
+
+  </body>
+</html>
