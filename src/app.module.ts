@@ -6,8 +6,16 @@ import 'angular-ui-router';
 import routes from './routes.config';
 import './main/main.module';
 import './hello/hello.module';
+import './test/test.module';
 
-let app: ng.IModule = angular.module('app', ['ui.router', 'main', 'hello']);
+let app: ng.IModule = angular.module(
+    'app',
+    [
+        'ui.router',
+        'main',
+        'hello',
+        'test',
+    ]);
 
 app.config(routes);
 

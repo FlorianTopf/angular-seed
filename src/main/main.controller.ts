@@ -6,11 +6,17 @@ export default class MainController {
         '$log'
     ];
 
+    stateObject: {};
+
     constructor (
         private $state: ng.ui.IStateService,
         private $log: ng.ILogService
     ) {
         this.$log.info($state.current.name);
+
+        this.stateObject = {
+            property: 1
+        };
     }
 }
 

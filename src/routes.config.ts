@@ -16,6 +16,14 @@ function routeProvider (
         controllerAs: 'mainController',
         templateUrl: 'main/main.html',
         url: '/'
+    }).state('test', {
+        controller: 'TestController',
+        controllerAs: 'testController',
+        templateUrl: 'test/test.html',
+        url: '/test',
+        params: {
+            stateObject: null
+        }
     });
 }
 
