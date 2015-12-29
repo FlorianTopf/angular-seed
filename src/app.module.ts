@@ -7,7 +7,7 @@ import routes from './routes.config';
 import './main/main.module';
 import './hello/hello.module';
 
-var app: ng.IModule = angular.module('app', ['ui.router', 'main', 'hello']);
+let app: ng.IModule = angular.module('app', ['ui.router', 'main', 'hello']);
 
 app.config(routes);
 
