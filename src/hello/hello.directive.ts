@@ -2,10 +2,11 @@
 
 interface IHelloScopeContent {
     welcome: string;
+    dmAction: () => void;
 }
 
 interface IHelloScope extends ng.IScope {
-    vm: IHelloScopeContent;
+    helloDir: IHelloScopeContent;
 }
 
 export default class Hello implements ng.IDirective {
@@ -15,16 +16,20 @@ export default class Hello implements ng.IDirective {
     }
 
     public controller ($scope: IHelloScope) {
-        let scope: IHelloScopeContent = $scope.vm;
+        let scope: IHelloScopeContent = $scope.helloDir;
         scope.welcome = 'HelloWorld';
+        scope.dmAction();
     }
 
     private create (): any {
         return {
             controller: ($scope: IHelloScope) => this.controller($scope),
-            controllerAs: 'vm',
-            restrict: 'E',
-            scope: true,
+            bindToController: true,
+            controllerAs: 'helloDir',
+            restrict: 'EA',
+            scope: {
+                dmAction: '&'
+            },
             templateUrl: 'hello/hello.html'
         };
     }

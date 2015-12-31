@@ -12,5 +12,9 @@ export default class MainController {
     ) {
         this.$log.info($state.current.name);
     }
+
+    protected dmAction (): void {
+        console.log('HELLO');
+    }
 }
 
